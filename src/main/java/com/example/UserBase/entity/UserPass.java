@@ -17,6 +17,8 @@ public class UserPass {
     private String login;
     @JsonIgnore
     private String password;
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private UserProfile userProfile;
 }
 
 

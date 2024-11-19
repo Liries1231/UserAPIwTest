@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.Instant;
 
@@ -12,6 +13,7 @@ import java.time.Instant;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
 public class UserProfile {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +21,7 @@ public class UserProfile {
     private Instant birthYear;
     private String about;
     @OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = true)
     private UserPass user;
 }
 
