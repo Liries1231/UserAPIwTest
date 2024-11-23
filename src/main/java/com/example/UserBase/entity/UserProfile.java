@@ -20,7 +20,7 @@ public class UserProfile {
     private long id;
     private Instant birthYear;
     private String about;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_id", nullable = true)
     private UserPass user;
 }
