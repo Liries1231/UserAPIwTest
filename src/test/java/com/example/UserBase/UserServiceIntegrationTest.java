@@ -54,7 +54,9 @@ public class UserServiceIntegrationTest extends AbstractIntegrationTest {
         UserPass userPass1 = new UserPass();
         userPass1.setLogin("updated");
         userPass1.setPassword("232432098432890432");
-        UserPass user3 = userService.update(user.getId(), userPass1);
+
+        UserPass user3 = userService.update(user.getId(), userPass1); //!!!!!!
+
         assertNotNull(user3);
 
         assertNotNull(user2);
