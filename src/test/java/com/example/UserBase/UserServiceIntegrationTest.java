@@ -60,6 +60,7 @@ public class UserServiceIntegrationTest extends AbstractIntegrationTest {
         assertNotNull(user2);
 
 
+
         userService.deleteById(user.getId());
         userRepository.flush();
 
