@@ -23,8 +23,23 @@ public class UserService {
 
 
     public UserPass createUser(UserPass user) {
+        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+        user.setPassword(hashedPassword);
         return userRepository.save(user);
     }
+
+
+    public UserPass update(Long id, UserPass user) {
+        UserPass existingProfile = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("UserProfile not found with id " + id));
+        UserPass userPass = new UserPass();
+        existingProfile.setPassword(user.getPassword());
+        existingProfile.setLogin(user.getLogin());
+
+        return userRepository.save(userPass);
+
+    }
+
 
     public UserPass getUserId(Long id) {
         return userRepository.findById(id).orElse(null);
