@@ -1,4 +1,5 @@
 package com.example.UserBase;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,12 +8,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.springframework.boot.test.context.SpringBootTest;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public class RegisterControllerIntegrationTest extends  AbstractIntegrationTest {
+public class RegisterControllerIntegrationTest extends AbstractIntegrationTest {
 
     private final HttpClient httpClient = HttpClient.newHttpClient();
     private final String BASE_URL = "http://localhost:8080/api/register";
@@ -24,7 +24,7 @@ public class RegisterControllerIntegrationTest extends  AbstractIntegrationTest 
                     {
                         "login": "testUser",
                         "password": "testPassword",
-                        "birthYear": "2000-01-01 00:00:00",
+//                        "birthYear": "2000-01-01 00:00:00",
                         "about": "This is a test profile"
                     }
                 """;
@@ -36,6 +36,8 @@ public class RegisterControllerIntegrationTest extends  AbstractIntegrationTest 
                 .build();
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(userCreationJson);
 
         assertEquals(200, response.statusCode());
         assertTrue(response.body().contains("\"login\":\"testUser\""));
