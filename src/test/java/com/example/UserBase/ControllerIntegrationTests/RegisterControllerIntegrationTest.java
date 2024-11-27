@@ -1,5 +1,6 @@
-package com.example.UserBase;
+package com.example.UserBase.ControllerIntegrationTests;
 
+import com.example.UserBase.AbstractIntegrationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

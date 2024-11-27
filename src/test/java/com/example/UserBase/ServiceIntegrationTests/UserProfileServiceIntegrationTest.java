@@ -1,5 +1,6 @@
-package com.example.UserBase;
+package com.example.UserBase.ServiceIntegrationTests;
 
+import com.example.UserBase.AbstractIntegrationTest;
 import com.example.UserBase.dto.UserCreationDto;
 import com.example.UserBase.entity.UserProfile;
 import com.example.UserBase.repos.UserProfRepos;
@@ -28,6 +29,7 @@ public class UserProfileServiceIntegrationTest extends AbstractIntegrationTest {
     @Autowired
     private UserProfileService userProfileService;
 
+
     @Autowired
     private UserService userService;
 
@@ -46,21 +48,21 @@ public class UserProfileServiceIntegrationTest extends AbstractIntegrationTest {
         userCreationDto.setAbout("Hello IM KIRILL");
 
         UserCreationDto userCreationDto2 = new UserCreationDto();
-        userCreationDto2.setLogin("Dolbayob");
+        userCreationDto2.setLogin("JAKE");
         userCreationDto2.setPassword("42312312312");
         userCreationDto2.setBirthYear("1999-01-01 00:00:00");
-        userCreationDto2.setAbout("Hello IM DOLBAYOB");
+        userCreationDto2.setAbout("Hello IM USER");
 
         UserProfile userProfile = userService.createUserWithProfile(userCreationDto);
         UserProfile userProfile2 = userService.createUserWithProfile(userCreationDto2);
 
         UserProfile updatedProfile = new UserProfile();
-        updatedProfile.setAbout("IM NOT KIRILL! IM NASTYA");
+        updatedProfile.setAbout("IM NOT KIRILL! IM SLAVA");
         updatedProfile.setUser(userProfile.getUser());
         UserProfile result = userProfileService.updateUserProfile(userProfile.getId(), updatedProfile);
 
-        int page = 0;  // Номер страницы (с 0)
-        int size = 1;  // Количество элементов на странице
+        int page = 0;
+        int size = 1;
         Page<UserProfile> usersPage = userProfileService.getUsers(page, size);
         assertNotNull(usersPage);
         assertEquals(size, usersPage.getContent().size(), "The number of users on the page should be " + size);
@@ -68,12 +70,10 @@ public class UserProfileServiceIntegrationTest extends AbstractIntegrationTest {
 
         Long profileId = userProfile2.getId();
 
-        // Удаляем профиль
         System.out.println("Attempting to delete user profile with id: " + profileId);
         userProfRepos.deleteById(profileId);
         userProfRepos.flush();
         System.out.println("Deleted user profile with id: " + profileId);
-        // Проверяем, что профиль удален
         boolean exists = userProfRepos.findById(profileId).isPresent();
         assertFalse(exists, "UserProfile was not deleted successfully");
 
@@ -87,11 +87,11 @@ public class UserProfileServiceIntegrationTest extends AbstractIntegrationTest {
         assertNotNull(userProfile2);
         assertNotNull(userProfile2.getUser());
         assertNotNull(userProfile2.getBirthYear());
-        assertEquals("Dolbayob", userProfile2.getUser().getLogin());
-        assertEquals("Hello IM DOLBAYOB", userProfile2.getAbout());
+        assertEquals("JAKE", userProfile2.getUser().getLogin());
+        assertEquals("Hello IM USER", userProfile2.getAbout());
 
         assertNotNull(result);
-        assertEquals("IM NOT KIRILL! IM NASTYA", result.getAbout());
+        assertEquals("IM NOT KIRILL! IM SLAVA", result.getAbout());
         assertEquals(userProfile.getUser().getId(), result.getUser().getId());
         assertEquals(userProfile.getBirthYear(), result.getBirthYear());
 

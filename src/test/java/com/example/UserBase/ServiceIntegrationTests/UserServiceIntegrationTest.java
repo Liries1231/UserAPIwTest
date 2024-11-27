@@ -1,10 +1,8 @@
-package com.example.UserBase;
+package com.example.UserBase.ServiceIntegrationTests;
 
+import com.example.UserBase.AbstractIntegrationTest;
 import com.example.UserBase.entity.UserPass;
-import com.example.UserBase.entity.UserProfile;
-import com.example.UserBase.repos.UserProfRepos;
 import com.example.UserBase.repos.UserRepository;
-import com.example.UserBase.service.UserProfileService;
 import com.example.UserBase.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,12 +19,6 @@ public class UserServiceIntegrationTest extends AbstractIntegrationTest {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private UserProfRepos userProfRepos;
-
-    @Autowired
-    private UserProfileService userProfileService;
 
     @Autowired
     private UserService userService;
@@ -55,7 +47,7 @@ public class UserServiceIntegrationTest extends AbstractIntegrationTest {
         userPass1.setLogin("updated");
         userPass1.setPassword("232432098432890432");
 
-        UserPass user3 = userService.update(user.getId(), userPass1); //!!!!!!
+        UserPass user3 = userService.update(user.getId(), userPass1);
 
         assertNotNull(user3);
 

@@ -2,6 +2,7 @@ package com.example.UserBase.controller;
 
 import com.example.UserBase.dto.UserCreationDto;
 import com.example.UserBase.entity.UserProfile;
+import com.example.UserBase.service.RegisterService;
 import com.example.UserBase.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/register")
 public class RegisterController {
 
-    private final UserService userService;
+    private final RegisterService registerService;
 
 
     @PostMapping
@@ -23,7 +24,7 @@ public class RegisterController {
             @RequestBody UserCreationDto userCreationDto) {
 
         UserProfile userProfile
-                = userService.createUserWithProfile(userCreationDto);
+                = registerService.registerUser(userCreationDto);
         return ResponseEntity.ok(userProfile);
     }
 
