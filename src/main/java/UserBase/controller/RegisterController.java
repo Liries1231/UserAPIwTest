@@ -1,10 +1,10 @@
-package com.example.UserBase.controller;
+package UserBase.controller;
 
-import com.example.UserBase.dto.UserCreationDto;
-import com.example.UserBase.entity.UserProfile;
-import com.example.UserBase.service.RegisterService;
-import com.example.UserBase.service.UserService;
+import UserBase.dto.UserCreationDto;
+import UserBase.entity.UserProfile;
+import UserBase.service.RegisterService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/register")
+@RequestMapping("/api/v1/register")
 public class RegisterController {
 
     private final RegisterService registerService;
@@ -25,7 +25,9 @@ public class RegisterController {
 
         UserProfile userProfile
                 = registerService.registerUser(userCreationDto);
-        return ResponseEntity.ok(userProfile);
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(userProfile);
     }
 
 

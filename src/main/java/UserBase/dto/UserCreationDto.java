@@ -1,4 +1,4 @@
-package com.example.UserBase.dto;
+package UserBase.dto;
 
 import lombok.Data;
 import lombok.Getter;

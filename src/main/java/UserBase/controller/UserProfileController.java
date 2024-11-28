@@ -1,16 +1,17 @@
-package com.example.UserBase.controller;
+package UserBase.controller;
 
-import com.example.UserBase.entity.UserProfile;
-import com.example.UserBase.service.UserProfileService;
+import UserBase.entity.UserProfile;
+import UserBase.service.UserProfileService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/api/user_profile")
+@RequestMapping("/api/v1/user_profile")
 public class UserProfileController {
 
     private final UserProfileService userProfileService;
@@ -25,13 +26,14 @@ public class UserProfileController {
     @PostMapping()
     public UserProfile enterUserProfile(@RequestBody
                                         UserProfile userProfile) {
-        return userProfileService.createUserProfile(userProfile);
+        UserProfile createdProfile = userProfileService.createUserProfile(userProfile);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdProfile).getBody();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUserProfile(@PathVariable Long id) {
         userProfileService.deleteUserProfile(id);
-        return ResponseEntity.ok("deleted");
+        return ResponseEntity.noContent().build();
     }
 
     @PutMapping("/{id}")

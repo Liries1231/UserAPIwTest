@@ -1,16 +1,13 @@
-package com.example.UserBase;
+package UserBase;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
 import org.testcontainers.containers.PostgreSQLContainer;
 
 import java.util.Arrays;
@@ -23,11 +20,7 @@ public abstract class AbstractIntegrationTest {
     public static final PostgreSQLContainer<?> POSTGRES = new PostgreSQLContainer<>("postgres:15")
             .withExposedPorts(5432);
 
-    @Autowired
-    protected ObjectMapper objectMapper;
 
-    @Autowired
-    protected MockMvc mockMvc;
 
     static class Initializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
         private static final Logger logger = LoggerFactory.getLogger(Initializer.class);

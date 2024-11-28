@@ -1,9 +1,9 @@
-package com.example.UserBase.service;
+package UserBase.service;
 
-import com.example.UserBase.dto.UserCreationDto;
-import com.example.UserBase.entity.UserPass;
-import com.example.UserBase.entity.UserProfile;
-import com.example.UserBase.repos.UserRepository;
+import UserBase.dto.UserCreationDto;
+import UserBase.entity.UserPass;
+import UserBase.entity.UserProfile;
+import UserBase.repos.UserRepository;
 import lombok.AllArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;

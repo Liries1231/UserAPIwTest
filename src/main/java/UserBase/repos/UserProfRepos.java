@@ -1,6 +1,6 @@
-package com.example.UserBase.repos;
+package UserBase.repos;
 
-import com.example.UserBase.entity.UserProfile;
+import UserBase.entity.UserProfile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

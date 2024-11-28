@@ -1,6 +1,6 @@
-package com.example.UserBase.repos;
+package UserBase.repos;
 
-import com.example.UserBase.entity.UserPass;
+import UserBase.entity.UserPass;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

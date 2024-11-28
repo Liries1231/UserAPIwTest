@@ -1,7 +1,7 @@
-package com.example.UserBase.service;
+package UserBase.service;
 
-import com.example.UserBase.entity.UserProfile;
-import com.example.UserBase.repos.UserProfRepos;
+import UserBase.entity.UserProfile;
+import UserBase.repos.UserProfRepos;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -9,9 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
-import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @AllArgsConstructor
