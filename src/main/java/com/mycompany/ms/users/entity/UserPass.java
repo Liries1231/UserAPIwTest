@@ -1,4 +1,4 @@
-package UserBase.entity;
+package com.mycompany.ms.users.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

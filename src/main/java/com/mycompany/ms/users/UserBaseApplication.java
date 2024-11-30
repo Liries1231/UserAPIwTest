@@ -1,4 +1,4 @@
-package UserBase;
+package com.mycompany.ms.users;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

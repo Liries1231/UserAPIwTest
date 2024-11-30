@@ -1,4 +1,4 @@
-package UserBase.entity;
+package com.mycompany.ms.users.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

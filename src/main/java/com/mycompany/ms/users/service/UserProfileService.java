@@ -1,7 +1,7 @@
-package UserBase.service;
+package com.mycompany.ms.users.service;
 
-import UserBase.entity.UserProfile;
-import UserBase.repos.UserProfRepos;
+import com.mycompany.ms.users.entity.UserProfile;
+import com.mycompany.ms.users.repos.UserProfRepos;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

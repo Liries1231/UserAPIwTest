@@ -1,12 +1,12 @@
-package UserBase.ServiceIntegrationTests;
+package com.mycompany.ms.users.ServiceIntegrationTests;
 
-import UserBase.AbstractIntegrationTest;
-import UserBase.dto.UserCreationDto;
-import UserBase.entity.UserProfile;
-import UserBase.repos.UserProfRepos;
-import UserBase.repos.UserRepository;
-import UserBase.service.UserProfileService;
-import UserBase.service.UserService;
+import com.mycompany.ms.users.AbstractIntegrationTest;
+import com.mycompany.ms.users.dto.UserCreationDto;
+import com.mycompany.ms.users.entity.UserProfile;
+import com.mycompany.ms.users.repos.UserProfRepos;
+import com.mycompany.ms.users.repos.UserRepository;
+import com.mycompany.ms.users.service.UserProfileService;
+import com.mycompany.ms.users.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

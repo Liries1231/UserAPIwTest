@@ -1,6 +1,6 @@
-package UserBase.repos;
+package com.mycompany.ms.users.repos;
 
-import UserBase.entity.UserProfile;
+import com.mycompany.ms.users.entity.UserProfile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

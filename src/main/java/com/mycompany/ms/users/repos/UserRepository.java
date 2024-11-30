@@ -1,6 +1,6 @@
-package UserBase.repos;
+package com.mycompany.ms.users.repos;
 
-import UserBase.entity.UserPass;
+import com.mycompany.ms.users.entity.UserPass;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
-package UserBase.ControllerIntegrationTests;
+package com.mycompany.ms.users.ControllerIntegrationTests;
 
-import UserBase.AbstractIntegrationTest;
+import com.mycompany.ms.users.AbstractIntegrationTest;
 import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

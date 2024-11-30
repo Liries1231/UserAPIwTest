@@ -1,7 +1,7 @@
-package UserBase.service;
+package com.mycompany.ms.users.service;
 
-import UserBase.dto.UserCreationDto;
-import UserBase.entity.UserProfile;
+import com.mycompany.ms.users.dto.UserCreationDto;
+import com.mycompany.ms.users.entity.UserProfile;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,15 +1,12 @@
-package UserBase.controller;
+package com.mycompany.ms.users.controller;
 
-import UserBase.dto.UserCreationDto;
-import UserBase.entity.UserProfile;
-import UserBase.service.RegisterService;
+import com.mycompany.ms.users.dto.UserCreationDto;
+import com.mycompany.ms.users.entity.UserProfile;
+import com.mycompany.ms.users.service.RegisterService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -20,6 +17,7 @@ public class RegisterController {
 
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<UserProfile> createUserWithProfile(
             @RequestBody UserCreationDto userCreationDto) {
 

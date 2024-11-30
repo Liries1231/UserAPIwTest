@@ -1,7 +1,7 @@
-package UserBase.controller;
+package com.mycompany.ms.users.controller;
 
-import UserBase.entity.UserPass;
-import UserBase.service.UserService;
+import com.mycompany.ms.users.entity.UserPass;
+import com.mycompany.ms.users.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,7 +32,7 @@ public class UserPassController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteUserProfile(@PathVariable Long id) {
         userService.deleteById(id);
-        return ResponseEntity.ok("deleted");
+        return ResponseEntity.noContent().build();
     }
 }
 

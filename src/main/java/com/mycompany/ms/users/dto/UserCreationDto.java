@@ -1,4 +1,4 @@
-package UserBase.dto;
+package com.mycompany.ms.users.dto;
 
 import lombok.Data;
 import lombok.Getter;

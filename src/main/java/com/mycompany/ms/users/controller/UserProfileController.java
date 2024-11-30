@@ -1,7 +1,7 @@
-package UserBase.controller;
+package com.mycompany.ms.users.controller;
 
-import UserBase.entity.UserProfile;
-import UserBase.service.UserProfileService;
+import com.mycompany.ms.users.entity.UserProfile;
+import com.mycompany.ms.users.service.UserProfileService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
