@@ -1,5 +1,6 @@
 package com.mycompany.ms.users.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -18,6 +19,7 @@ public class UserPass {
     @JsonIgnore
     private String password;
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
     private UserProfile userProfile;
 }
 
