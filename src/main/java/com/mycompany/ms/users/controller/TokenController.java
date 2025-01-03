@@ -30,6 +30,7 @@ public class TokenController {
     }
 
 
+
     public boolean isTokenValid(String token) {
         try {
             JWTVerifier verifier = JWT.require(com.auth0.jwt.algorithms.Algorithm.HMAC256(secret))
