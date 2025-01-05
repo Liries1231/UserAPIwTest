@@ -15,7 +15,6 @@ ms-user отвечает за управление пользователями 
 
 - **Java 21**
 - **Spring Boot**
-- **Spring Security**
 - **PostgreSQL**
 - **JSON Web Tokens (JWT)**
 
