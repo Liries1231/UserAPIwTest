@@ -25,20 +25,18 @@ ms-user отвечает за управление пользователями 
    git clone <repository_url>
    cd ms-user
    ```
-2. Настройте `application.yml` (если требуется). Обратите внимание на настройки базы данных и секрета JWT.
+2. Утилиты
+
+org.projectlombok:lombok — для упрощения работы с POJO (геттеры, сеттеры и т.д.).
+com.fasterxml.jackson.core:jackson-databind — для работы с JSON.
+org.mindrot:jbcrypt — для хэширования паролей.
+## Структура проекта
 3. Соберите и запустите приложение:
    ```bash
    ./mvnw clean install
    ./mvnw spring-boot:run
    ```
-Утилиты
 
-org.projectlombok:lombok — для упрощения работы с POJO (геттеры, сеттеры и т.д.).
-
-com.fasterxml.jackson.core:jackson-databind — для работы с JSON.
-
-org.mindrot:jbcrypt — для хэширования паролей.
-## Структура проекта
 
 - **UserController**:
 
