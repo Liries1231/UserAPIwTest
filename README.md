@@ -31,7 +31,13 @@ ms-user отвечает за управление пользователями 
    ./mvnw clean install
    ./mvnw spring-boot:run
    ```
+Утилиты
 
+org.projectlombok:lombok — для упрощения работы с POJO (геттеры, сеттеры и т.д.).
+
+com.fasterxml.jackson.core:jackson-databind — для работы с JSON.
+
+org.mindrot:jbcrypt — для хэширования паролей.
 ## Структура проекта
 
 - **UserController**:
