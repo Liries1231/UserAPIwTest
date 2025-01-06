@@ -8,6 +8,7 @@ import com.mycompany.ms.users.entity.UserPass;
 import com.mycompany.ms.users.entity.UserProfile;
 import com.mycompany.ms.users.repos.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -23,6 +24,7 @@ import java.util.Date;
 
 @AllArgsConstructor
 @Service
+@Slf4j
 public class UserService {
 
 
@@ -74,11 +76,14 @@ public class UserService {
         }
 
         Algorithm algorithm = Algorithm.HMAC256(jwtSecret);
-        return JWT.create()
+
+        String token =  JWT.create()
                 .withSubject(user.getLogin())
                 .withClaim("userId", user.getId())
                 .withExpiresAt(new Date(System.currentTimeMillis() + 3600000))
                 .sign(algorithm);
+        log.info("Generated token: {}", token);
+        return token;
     }
 
 
