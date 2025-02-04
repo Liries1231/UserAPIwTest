@@ -38,7 +38,6 @@ org.mindrot:jbcrypt — для хэширования паролей.
    ./mvnw spring-boot:run
    ```
 
-
 - **UserController**:
 
   - `POST /api/v1/register`: регистрация нового пользователя.
